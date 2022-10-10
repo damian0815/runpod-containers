@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=pytorch/pytorch
+ARG BASE_IMAGE=python:3.10-slim-bullseye
 
 FROM ${BASE_IMAGE} as dev-base
 
@@ -15,6 +15,7 @@ RUN apt-get update --yes && \
     curl\
     git\
     bash\
+    vim\
     openssh-server &&\
     apt-get clean && rm -rf /var/lib/apt/lists/* && \
     echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
